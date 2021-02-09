@@ -18,7 +18,6 @@
 
 // console.log(charCount("hi my name is chris! omg!!!!"))
 
-
 // Refactored Solution that runs faster and separates functionality
 function charCount(str) {
   let results = {}
