@@ -8,9 +8,7 @@ const arr3 = [] //0
 const arr4 = [-2, -1, -1, 0, 1] //4
 
 function countUniqueValues(arr) {
-  if (arr.length === 0) {
-    return 0
-  }
+  if (arr.length === 0) return 0
   let left = 0
   let right = 1
 
