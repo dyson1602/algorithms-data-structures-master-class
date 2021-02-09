@@ -2,7 +2,7 @@
 //every value in the array has it's corresponding value squared in the second array. The 
 //frequency of values must be the same.
 
-
+//
 const arr1 = [1, 2, 3, 4, 5]
 const arr2 = [1, 9, 16, 4, 25]
 const arr3 = [1, 9, 16, 4, 26]
@@ -45,11 +45,16 @@ function same(arr1, arr2){
   }
 
   for(let key in frequencyCounter1){
-    if(){
-      
+    if(!(key ** 2 in frequencyCounter2)){
+      return false
+    }
+    //key is the value of the number in the array
+    if(frequencyCounter2[key ** 2] !== frequencyCounter1[key]){
+      return false
     }
   }
-
-
   return true
 }
+
+console.log(same(arr1,arr2)) //expect true
+console.log(same(arr1,arr3)) //expect false
