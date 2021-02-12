@@ -19,4 +19,3 @@ function averagePair(nums, target){
   }
   return false
 }
-
