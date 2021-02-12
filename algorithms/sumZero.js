@@ -26,7 +26,6 @@ function sumZero(arr) {
   let left = 0
   let right = arr.length - 1
   while (left < right) {
-    console.log(left, right)
     let sum = arr[left] + arr[right]
     if (sum === 0) {
       return [arr[left], arr[right]]
