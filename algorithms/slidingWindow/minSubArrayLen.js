@@ -3,6 +3,8 @@
 //contiguous sub array of which the sum is greater than or equal to the integer passed
 //to the function. If there isn't one, return 0 instead.
 
+//Time: O(n), Space: O(1)
+
 function minSubArrayLen(array, target){
   let leading = 0
   let trailing = 0
