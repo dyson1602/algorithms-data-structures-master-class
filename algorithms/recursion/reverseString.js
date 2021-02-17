@@ -13,12 +13,11 @@
 
 
 function reverse(string){
-  if (string.length === 1) return string[0]
-  console.log(string.pop())
-  // return string[-1].concat(reverse(string.slice(0, -1)))
+  if (string.length === 0) return ""
+  return string.slice(-1) + (reverse(string.slice(0, -1)))
 }
 
 
 console.log(reverse("string")) //
 console.log(reverse("hello"))
-// console.log(reverse(""))
+console.log(reverse(""))
