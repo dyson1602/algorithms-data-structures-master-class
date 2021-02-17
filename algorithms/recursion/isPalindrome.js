@@ -15,7 +15,6 @@
 //3. if they match, slice them off
 //4. recursively call isPalindrome with smaller string
 
-
 function isPalindrome(string) {
   if (string.length === 0 || string.length === 1) return true
   else if (string.slice(0,1) !== string.slice(-1)) return false

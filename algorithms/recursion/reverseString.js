@@ -15,6 +15,6 @@ function reverse(string){
 }
 
 
-console.log(reverse("string")) //
-console.log(reverse("hello"))
-console.log(reverse(""))
+console.log(reverse("string"))
+// console.log(reverse("hello"))
+// console.log(reverse(""))
