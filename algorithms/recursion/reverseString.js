@@ -5,11 +5,8 @@
 // reverse("string") // "gnirts"
 // reverse("hello") // "olleh"
 
-
 //1. base case string is "" so return ""
-//2. define empty temp string
-//3. 
-//4. 
+//2. return the last letter of the string and then add the recursive last letter
 
 
 function reverse(string){
