@@ -1,7 +1,7 @@
 //Write a function called findLongestSubString, which accepts a string and returns the
 //length of the longest substring with all the distinct characters.
 
-//Time: O(n)
+//Time: O(n), Space O(1)
 
 //1. check string for 0 length
 //2. set left marker, set right marker
@@ -18,6 +18,7 @@ function findLongestSubString(string) {
   let maxLen = 1
 
   while (right < string.length) {
+    console.log("set:", set, "left: ", left, "right: ", right)
     if (!set.has(string[right])) {
       set.add(string[right])
       maxLen = Math.max(maxLen, right - left + 1)

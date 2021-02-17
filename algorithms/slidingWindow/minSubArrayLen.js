@@ -23,7 +23,6 @@ function minSubArrayLen(array, target){
       break
     }
   }
-
 return minLength === Infinity ? 0 : minLength
 }
 
