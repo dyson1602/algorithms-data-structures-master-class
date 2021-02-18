@@ -12,7 +12,7 @@
 
 //this solution doesn't pass CS tests, probably because it doesn't do it 
 //recursively, but I don't see why this doesn't work. 
-// function flatten(array){
+// function flatten1(array){
 //   return array.flat(Infinity)
 // }
 
@@ -38,3 +38,7 @@ console.log(flatten([1, 2, 3, [4, 5] ])) // [1, 2, 3, 4, 5]
 console.log(flatten([1, [2, [3, 4], [[5]]]])) // [1, 2, 3, 4, 5]
 console.log(flatten([[1],[2],[3]])) // [1,2,3]
 console.log(flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]])) // [1,2,3]
+console.log(flatten1([1, 2, 3, [4, 5] ])) // [1, 2, 3, 4, 5]
+console.log(flatten1([1, [2, [3, 4], [[5]]]])) // [1, 2, 3, 4, 5]
+console.log(flatten1([[1],[2],[3]])) // [1,2,3]
+console.log(flatten1([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]])) // [1,2,3]

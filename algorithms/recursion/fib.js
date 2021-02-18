@@ -8,14 +8,29 @@
 // fib(28) //317811
 // fib(35) //9227465
 
-//1. set total = 1
-//set helper function with base case of num === 1 or 2 to return 1
-//
+// num      1 2 3 4 5 6 7 
+// value    1 1 2 3 5 8 13
+
+// num === 4  the value at num === 4 is the same as (num === 3 + num === 2)
+// orrrr we can say num4 === num(4 - 2) + num(4 - 1) 
 
 function fib(num){
-  if (num <= 2) return 1
-  return fib(num-1) + fib(num-2)
+  if (num <=2) return 1
+  return fib(num - 2) + fib(num - 1)
 }
+
+//                   fib(5)
+//        2            +             3       = 5
+//      fib(3)         +           fib(4)
+//   1    +   1             1        +       2
+// fib(1) + fib(2)        fib(2)     +     fib(3)
+//                                       1   +    1
+//                                    fib(1) +  fib(2)
+
+//           fib(3)
+
+// fib(1)   fib(3-2) === 1  fib(3-1) === 1
+
 
 console.log(fib(4))
 console.log(fib(10))
