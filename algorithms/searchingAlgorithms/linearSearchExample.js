@@ -7,14 +7,14 @@
 //4. If it is never found, return -1
 
 
-function simpleLinearSearch(array, value){
-  for (let ind of array){
-    if (array[ind] === value) return ind
+function linearSearch(array, value){
+  for (let i = 0; i< array.length; i++){
+    if (array[i] === value) return i
   }
   return -1
 }
 
-let nums = [1,2,3,4,5,6,7,8,9,10]
+let nums = [11,25,3,4,5,6,7,8,9,10]
 
 console.log(simpleLinearSearch(nums, 7))
 console.log(simpleLinearSearch(nums, 17))
