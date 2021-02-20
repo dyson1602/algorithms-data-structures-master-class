@@ -1,6 +1,5 @@
 //Write a binarySearch function that accepts a sorted array and a value.
 
-
 //1. Create a pointer at the start of the array, and a right pointer at the end
 //     of the array.
 //2. Create while loop that loops so long as the left pointer is left of the
@@ -11,6 +10,9 @@
 //     move the right index.
 //6. If the value is never found, return -1
 
+
+//this solution is a little sloppy and could be refactored down a couple lines
+//but for the purposes of this question it works.
 
 function binarySearch(arr, val){
   let left = 0
