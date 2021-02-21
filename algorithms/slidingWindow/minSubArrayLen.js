@@ -25,7 +25,7 @@ function minSubArrayLen(array, target){
   }
 return minLength === Infinity ? 0 : minLength
 }
-
+  
 console.log(minSubArrayLen([1,2,3,4,5,6,6,4,3], 11))
 console.log(minSubArrayLen([1,2,3,4,5,6,6,4,3], 3))
 console.log(minSubArrayLen([1,2,3,4,5,6,6,4,3], 41))
