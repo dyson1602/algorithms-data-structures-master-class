@@ -1,16 +1,20 @@
 //selection sort
 
+//Time: O(n^2)
+//Selection sort is good if you want to minimize the amount of swaps that take
+//place. Otherwise, it is not very good.
+//Space Complexity: O(1)
+
 function selectionSort(array) {
   const swap = (arr, ind1, ind2) => {
     [arr[ind1], arr[ind2]] = [arr[ind2], arr[ind1]]
   }
-  let min
   for (let i = 0; i < array.length; i++) {
-    min = i
+    let min = i
     for (let j = i + 1; j < array.length; j++) {
       if (array[j] < array[min]) min = j
     }
-    if (array[min] < array[i]) swap(array, i, min)
+    if (i !== min) swap(array, i, min)
   }
   return array
 }

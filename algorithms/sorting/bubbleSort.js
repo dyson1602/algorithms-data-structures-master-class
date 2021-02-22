@@ -4,6 +4,8 @@
 
 //bubblesort
 //Time: Best-case O(n), Worst-case O(n^2)
+//Space Complexity: O(1)
+
 function bubbleSort(array) {
   const swap = (arr, ind1, ind2) => {
     [arr[ind1], arr[ind2]] = [arr[ind2], arr[ind1]]
