@@ -23,20 +23,29 @@
 //  variable then swap the current element with the element at the pivot ind
 //swap the starting element (the pivot) with the pivot ind
 //return the pivot ind
-
-function pivot(arr, start = 0, end = arr.length) {
-  let piv = arr[start]
-  let pivInd = 0
-  for (let i = start; i < end; i++) {
-    if (piv > arr[i]) {
-      pivInd++
-      [arr[i], arr[pivInd]] = [arr[pivInd], arr[i]]
-    }
-  }
-  [arr[start], arr[pivInd]] = [arr[pivInd], arr[start]]
-  return pivInd
+function swap(arr, ind1, ind2) {
+  [arr[ind1], arr[ind2]] = [arr[ind2], arr[ind1]]
 }
 
-let array = [34,3, 5, 7, 3, 45, 23, 8, 65, 49, 12, 0]
+function pivot(arr, start = 0, end = arr.length + 1) {
+  let pivot = arr[start]
+  let swapInd = 0
+  for (let i = start + 1; i < end; i++) {
+    if (pivot > arr[i]) {
+      swapInd++
+      swap(arr, swapInd, i)
+    }
+  }
+  swap(arr, start, swapInd)
+  return swapInd
+}
+
+//quicksort function
+function quickSort(arr) {
+
+
+}
+
+let array = [34, 3, 5, 7, 3, 45, 23, 8, 65, 49, 12, 0]
 
 console.log(pivot(array))
