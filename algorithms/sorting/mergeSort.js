@@ -78,6 +78,11 @@ let arrOne = [1, 2, 3, 4, 7, 9, 12, 24, 32]
 let arrTwo = [0, 2, 3, 6, 6, 9, 11, 42, 53]
 let rando = [3, 6, 23, 7, 45, 23, 6, 8, 5, 63453, 65, 4, 23, 6, 86, 4, 2, 22, 636, 7, 54]
 
+//OVERALL TIME COMPLEXITY is O(n log n). log n represents the number of decompositions
+//needed to get to all individual arrays that can then be merged together.
+//n represents each comparison for the merging
+
+
 // console.log(merge(arrOne, arrTwo))
 // console.log(mergeSort(arrOne))
 console.log(csMergeSort(rando))
