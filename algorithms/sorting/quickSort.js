@@ -29,8 +29,8 @@ function swap(arr, ind1, ind2) {
 
 function pivot(arr, start = 0, end = arr.length + 1) {
   let pivot = arr[start]
-  let swapInd = 0
-  for (let i = start + 1; i < end; i++) {
+  let swapInd = start
+  for (let i = start + 1; i < arr.length; i++) {
     if (pivot > arr[i]) {
       swapInd++
       swap(arr, swapInd, i)
@@ -41,11 +41,20 @@ function pivot(arr, start = 0, end = arr.length + 1) {
 }
 
 //quicksort function
-function quickSort(arr) {
-
-
+//call the pivot helper on the array
+//when the helper returns to you the updated pivot index, recursively call the
+//pivot helper on the subarray to the left of that index, and the subarray to
+//the right of that index
+//your base case occurs when you consider a subarray with less than two elements
+function quickSort(arr, left = 0, right = arr.length - 1) {
+  if (left < right) {
+    let pivotIndex = pivot(arr, left, right)
+    quickSort(arr, left, pivotIndex - 1)
+    quickSort(arr, pivotIndex + 1, right)
+  }
+  return arr
 }
 
-let array = [34, 3, 5, 7, 3, 45, 23, 8, 65, 49, 12, 0]
+let test = [34, 3, 5, 7, 3, 45, 23, 8, 65, 49, 12, 0]
 
-console.log(pivot(array))
+console.log(quickSort(test))
