@@ -39,10 +39,10 @@ class DoublyLinkedList {
     this.length--
     return poppedNode
   }
-  shift(){
-    if(this.length === 0) return undefined
+  shift() {
+    if (this.length === 0) return undefined
     let oldHead = this.head
-    if(this.length === 1){
+    if (this.length === 1) {
       this.head = null
       this.tail = null
     } else {
@@ -53,9 +53,9 @@ class DoublyLinkedList {
     this.length--
     return oldHead
   }
-  unshift(val){
+  unShift(val) {
     let newNode = new Node(val)
-    if(!this.head){
+    if (!this.head) {
       this.head = newNode
       this.tail = newNode
     } else {
@@ -66,5 +66,36 @@ class DoublyLinkedList {
     this.length++
     return this
   }
+  get(ind) {
+    if (ind < 0 || ind >= this.length) return null
+    let count, current
+    if (ind <= this.length / 2) {
+      count = 0
+      current = this.head
+      while (count != ind) {
+        current = current.next
+        count++
+      }
+    } else if (ind > this.length / 2) {
+      count = this.length - 1
+      current = this.tail
+      while (count != ind) {
+        current = current.prev
+        count--
+      }
+    }
+    return current
+  }
 
 }
+
+let list = new DoublyLinkedList
+
+list.push(100)
+list.push(200)
+list.push(300)
+list.push(400)
+list.push(500)
+list.push(600)
+
+console.log(list.get(2))
