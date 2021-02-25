@@ -66,6 +66,7 @@ class DoublyLinkedList {
     this.length++
     return this
   }
+  //Time: O(n)
   get(ind) {
     if (ind < 0 || ind >= this.length) return null
     let count, current
@@ -94,20 +95,37 @@ class DoublyLinkedList {
     }
     return false
   }
+  //Time: O(1)
   insert(ind, val) {
     if (ind < 0 || ind > this.length) return false
     if (ind === 0) return !!this.unShift(val)
     if (ind === this.length) return !!this.push(val)
 
     let newNode = new Node(val)
-    let beforeNode = this.get(ind - 1)
-    let afterNode = beforeNode.next
+    let prevNode = this.get(ind - 1)
+    let nextNode = prevNode.next
 
-    newNode.prev = beforeNode, beforeNode.next = newNode
-    newNode.next = afterNode, afterNode.prev = newNode
+    newNode.prev = prevNode, prevNode.next = newNode
+    newNode.next = nextNode, nextNode.prev = newNode
 
     this.length++
     return true
+  }
+  //Time: O(1)
+  remove(ind){
+    if(ind < 0 || ind > this.length) return undefined
+    if(ind === 0) return this.shift()
+    if(ind === this.length - 1) return this.pop()
+    
+    let removedNode = this.get(ind)
+    let prevNode = removedNode.prev
+    let nextNode = removedNode.next
+
+    prevNode.next = nextNode, nextNode.prev = prevNode
+    removedNode.next = null, removedNode.prev = null
+
+    this.length--
+    return removedNode
   }
 }
 
