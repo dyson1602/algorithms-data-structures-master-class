@@ -1,5 +1,9 @@
 //BIG O of Stacks
 
+//Insertion and removal are Time: O(1). Searching and access would be better
+//suited to use a different data structure, such as arrays. Stacks are LIFO data
+//structures.
+
 class Node {
   constructor(val){
     this.val = val
