@@ -1,20 +1,20 @@
 class Node {
-  constructor(val){
+  constructor(val) {
     this.val = val
     this.next = null
     this.prev = null
   }
 }
 
-class DoublyLinkedList{
-  constructor(){
+class DoublyLinkedList {
+  constructor() {
     this.head = null
     this.tail = null
     this.length = 0
   }
-  push(val){
+  push(val) {
     let newNode = new Node(val)
-    if(!this.head){
+    if (!this.head) {
       this.head = newNode
       this.tail = newNode
     } else {
@@ -23,5 +23,17 @@ class DoublyLinkedList{
       this.tail = newNode
     }
     this.length++
+  }
+  pop() {
+    if (!this.head) return undefined
+    let poppedNode = this.tail
+    if (this.length === 1) {
+      this.head = null
+      this.tail = null
+    } else {
+      this.tail = poppedNode.prev
+      this.tail.next = null
+      poppedNode.prev = null
+    }
   }
 }
