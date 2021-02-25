@@ -16,7 +16,6 @@ class BinarySearchTree {
 
     let current = this.root
     while (true) {
-      //many different ways to handle duplicates, but this one just
       if (val === current.val) return undefined
       if (val < current.val) {
         if (current.left === null) {
@@ -24,7 +23,6 @@ class BinarySearchTree {
           return this
         }
         current = current.left
-
       }
       if (val > current.val) {
         if (current.right === null) {
@@ -34,6 +32,17 @@ class BinarySearchTree {
         current = current.right
       }
     }
+  }
+  search(val) {
+    if (this.root === null) return false
+    let current = this.root,
+      found = false
+    while (current && !found) {
+      if (val < current.val) current = current.left
+      else if (val > current.val) current = current.right
+      else return true
+    }
+    return false
   }
 }
 
