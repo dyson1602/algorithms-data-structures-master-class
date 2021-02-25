@@ -1,6 +1,8 @@
 //quick sort
 
-//choose an index that acts as the pivot
+//Time: average O(n log n), worst-case is O(n^2), Space: O(n)
+//a way to avoid worst-case you can choose the median element instead of the
+//first element (assuming array is already sorted)
 
 //pivot helper or partition written first
 //given an array, this helper function should designate an element as the pivot
