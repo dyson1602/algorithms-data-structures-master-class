@@ -52,13 +52,21 @@ class BinarySearchTree {
       node = this.root
     queue.push(node)
     while (queue.length) {
-      // console.log("queue:", queue)
       node = queue.shift()
       visited.push(node.val)
-      // console.log("visited: ", visited)
       if (node.left) queue.push(node.left)
       if (node.right) queue.push(node.right)
     }
+    return visited
+  }
+  DFSPreOrder() {
+    let visited = []
+    function traverse(node) {
+      visited.push(node.val)
+      if (node.left) traverse(node.left)
+      if (node.right) traverse(node.right)
+    }
+    traverse(this.root)
     return visited
   }
 }
@@ -74,4 +82,4 @@ tree.insert(12)
 tree.insert(45)
 tree.insert(98)
 
-console.log(tree.BFS())
+console.log(tree.DFSPreOrder())
