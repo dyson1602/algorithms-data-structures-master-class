@@ -107,3 +107,12 @@ tree.insert(98)
 console.log(tree.DFSPreOrder())
 console.log(tree.DFSPostOrder())
 console.log(tree.DFSInOrder())
+
+//Space complexity of a wide tree is large in BFS, less so in DFS
+//Time complexity is O(n) since we visit every single node one time.
+
+//DFS InOrder: used commonly with BSTs, because the data that is returned is
+  //in order (just a side effect)
+//DFS PreOrder: useful if you are trying to clone/flatten out the tree in to an
+  //array and rebuild later (you immediately know what the root is)
+//Can only have a BST with data that is comparable.
