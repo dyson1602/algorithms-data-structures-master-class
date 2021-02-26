@@ -1,3 +1,5 @@
+//Time: Average is O(log n) but can go up to O(n) if the tree is one-sided
+
 class Node {
   constructor(val) {
     this.val = val
@@ -44,6 +46,21 @@ class BinarySearchTree {
     }
     return false
   }
+  BFS() {
+    let queue = [],
+      visited = [],
+      node = this.root
+    queue.push(node)
+    while (queue.length) {
+      // console.log("queue:", queue)
+      node = queue.shift()
+      visited.push(node.val)
+      // console.log("visited: ", visited)
+      if (node.left) queue.push(node.left)
+      if (node.right) queue.push(node.right)
+    }
+    return visited
+  }
 }
 
 let tree = new BinarySearchTree()
@@ -56,3 +73,5 @@ tree.insert(84)
 tree.insert(12)
 tree.insert(45)
 tree.insert(98)
+
+console.log(tree.BFS())
