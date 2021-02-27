@@ -1,6 +1,10 @@
+//Insert/remove Time: O(log n) due to only making one comparison on each level
+//max heap or min heap will always fill out each row as it is built
+//Search Time: O(n), binary heaps not really meant for searching
+
 class MaxBinaryHeap {
   constructor() {
-    this.values = [41, 39, 33, 18, 27, 12]
+    this.values = [] 
   }
   insert(val) {
     this.values.push(val)
