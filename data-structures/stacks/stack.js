@@ -7,7 +7,7 @@
 class Node {
   constructor(val){
     this.val = val
-    this.next = next
+    this.next = null
   }
 }
 
@@ -48,3 +48,5 @@ stack.push(200)
 stack.push(300)
 stack.push(400)
 stack.push(500)
+
+export default Stack

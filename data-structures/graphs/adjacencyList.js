@@ -29,24 +29,70 @@ class Graph {
     }
   }
   dfsRecursive(start) {
-    const result = []
+    const results = []
     const visited = {}
     const adjacencyList = this.adjacencyList
-  
+
     function dfs(vertex) {
       if (!vertex) return null
-        visited[vertex] = true
-        result.push(vertex)
-        adjacencyList[vertex].forEach(neighbor => {
-          if(!visited[neighbor]){
-            return dfs(neighbor)
-          }
-        })
+      visited[vertex] = true
+      results.push(vertex)
+      adjacencyList[vertex].forEach(neighbor => {
+        if (!visited[neighbor]) {
+          return dfs(neighbor)
+        }
+      })
     }
 
     dfs(start)
-    return result
+    return results
   }
+  dfsIterative(start) {
+    const stack = [start]
+    const visited = {}
+    const results = []
+    let currentVertex
+
+    visited[start] = true
+    while (stack.length) {
+      currentVertex = stack.pop()
+      results.push(currentVertex)
+
+      this.adjacencyList[currentVertex].forEach(neighbor => {
+        if(!visited[neighbor]){
+          visited[neighbor] = true
+          stack.push(neighbor)
+        }
+      })
+    }
+
+    return results
+  }
+  //Imported stack, but something is wrong with the stack. Must check the code.
+  // dfsIterative(start) {
+  //   const stack = new Stack()
+  //   stack.push(start)
+
+  //   const visited = {}
+  //   const results = []
+  //   let currentVertex
+
+  //   visited[start] = true
+  //   while (stack.size) {
+  //     console.log(stack.size)
+  //     currentVertex = stack.pop()
+  //     results.push(currentVertex)
+
+  //     this.adjacencyList[currentVertex].forEach(neighbor => {
+  //       if(!visited[neighbor]){
+  //         visited[neighbor] = true
+  //         stack.push(neighbor)
+  //       }
+  //     })
+  //   }
+
+  //   return results
+  // }
 }
 
 let g = new Graph()
@@ -65,3 +111,7 @@ g.addEdge("C", "E")
 g.addEdge("D", "E")
 g.addEdge("D", "F")
 g.addEdge("E", "F")
+
+console.log(g.dfsIterative("A"))
+console.log(g.dfsRecursive("A"))
+
