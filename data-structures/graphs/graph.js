@@ -1,4 +1,5 @@
-//undirected, unweighted graph with adjacency list
+//undirected, unweighted graph with adjacency list with dfs and bfs traversal
+//methods added to it.
 
 class Graph {
   constructor() {
@@ -59,7 +60,7 @@ class Graph {
       results.push(currentVertex)
 
       this.adjacencyList[currentVertex].forEach(neighbor => {
-        if(!visited[neighbor]){
+        if (!visited[neighbor]) {
           visited[neighbor] = true
           stack.push(neighbor)
         }
@@ -68,6 +69,27 @@ class Graph {
 
     return results
   }
+  bfs(start) {
+    const queue = [start]
+    const results = []
+    const visited = {}
+    let currentVertex
+
+    while (queue.length) {
+      currentVertex = queue.shift()
+      visited[currentVertex] = true
+      results.push(currentVertex)
+
+      this.adjacencyList[currentVertex].forEach(neighbor => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true
+          queue.push(neighbor)
+        }
+      })
+    }
+    return results
+  }
+
   //Imported stack, but something is wrong with the stack. Must check the code.
   // dfsIterative(start) {
   //   const stack = new Stack()
@@ -114,4 +136,5 @@ g.addEdge("E", "F")
 
 console.log(g.dfsIterative("A"))
 console.log(g.dfsRecursive("A"))
+console.log(g.bfs("A"))
 
