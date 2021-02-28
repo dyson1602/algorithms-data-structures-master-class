@@ -12,11 +12,24 @@
 //   return res
 // }
 
-function dynamicFibonacci(n, memo = [undefined,1,1]) {
+function memoizedFibonacci(n, memo = [undefined, 1, 1]) {
   if (memo[n] !== undefined) return memo[n]
-  let res = dynamicFibonacci(n - 1, memo) + dynamicFibonacci(n - 2, memo)
+  let res = memoizedFibonacci(n - 1, memo) + memoizedFibonacci(n - 2, memo)
   memo[n] = res
   return res
 }
 
-console.log(dynamicFibonacci(6))
+//buttom-up approach. fixes the stack overflow problem that can occur with
+//the memoized solution
+//Time: O(n)
+function tabulatedFibonacci(n) {
+  if (n <= 2) return 1
+  let fibNums = [0, 1, 1]
+  for (let i = 3; i <= n; i++) {
+    fibNums[i] = fibNums[i - 1] + fibNums[i - 2]
+  }
+  return fibNums[n]
+}
+
+console.log(memoizedFibonacci(6))
+console.log(tabulatedFibonacci(6))
