@@ -21,7 +21,6 @@ function merge(arr1, arr2) {
     arr1[0] < arr2[0]
       ? mergedArr.push(arr1.shift())
       : mergedArr.push(arr2.shift())
-    console.log(mergedArr, arr1, arr2)
   }
   mergedArr.push(arr1.concat(arr2))
   return mergedArr.flat()
@@ -76,6 +75,8 @@ function csMergeSort(arr) {
 
 let arrOne = [1, 2, 3, 4, 7, 9, 12, 24, 32]
 let arrTwo = [0, 2, 3, 6, 6, 9, 11, 42, 53]
+let arrThree = [900,901,902,903,904,905,906,907,908,909]
+let arrFour = [1]
 let rando = [3, 6, 23, 7, 45, 23, 6, 8, 5, 63453, 65, 4, 23, 6, 86, 4, 2, 22, 636, 7, 54]
 
 //OVERALL TIME COMPLEXITY is O(n log n). log n represents the number of decompositions
@@ -83,6 +84,6 @@ let rando = [3, 6, 23, 7, 45, 23, 6, 8, 5, 63453, 65, 4, 23, 6, 86, 4, 2, 22, 63
 //n represents each comparison for the merging
 
 
-// console.log(merge(arrOne, arrTwo))
-// console.log(mergeSort(arrOne))
-console.log(csMergeSort(rando))
+console.log(merge(arrThree,arrFour ))
+// console.log(mergeSort(rando))
+// console.log(csMergeSort(rando))
