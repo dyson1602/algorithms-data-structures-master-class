@@ -11,8 +11,6 @@ const guessTheRoot = n => {
   }
 }
 
-
-
 // sqrt(n)   ?==    log(n)
 // n^(1/2)  ?==    log(n)
 // log(n^(1/2)) ?== log(log(n))
