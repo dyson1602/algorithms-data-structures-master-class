@@ -4,7 +4,7 @@
 
 //WHITEBOARD
 // "a" is 97, "z" is 122 for charCodeAt()
-//split the string into an array, filter anything not included in the charCodeAt between 96 and 123
+//split the string into an array, filter anything not included in the charCodeAt() between 96 and 123
 //two pointer comparison from start and finish of new array until left pointer is greater than right
 //return false if not palindromic
 //return true
