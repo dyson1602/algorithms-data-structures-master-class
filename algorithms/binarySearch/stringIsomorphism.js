@@ -16,3 +16,12 @@ const stringIsomorphism = (s, t) => {
   }
   return true
 }
+
+//second solution, less legible, but "more clever" the .some() method is a good
+//one to learn, that i've never seen used. must remember it
+const stringIsomorphism = (s, t,
+  f = (s, t, d = {}) => ![...s].some((v, i) => {
+    if (d[v] && d[v] !== t[i])
+      return 1
+    d[v] = t[i]
+  })) => f(s, t) && f(t, s)
