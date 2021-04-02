@@ -2,16 +2,14 @@
 // in the list is same as its value.
 
 const equivalencyAndFrequency = nums => {
-  let counter = {}
-
-  for (let i = 0; i < nums.length; i++) {
-    let num = nums[i]
-    if (counter[num]) {
-      counter++
-      if (counter[num] === num) return true
-    } else {
-      counter[num] = 1
-    }
-  }
-  return false
+  const freq = {}
+  let result = false
+  nums.forEach(num => {
+    if (!freq[num]) freq[num] = 1
+    else freq[num]++
+  })
+  Object.entries(freq).forEach(numCount => {
+    if (numCount[0] == numCount[1]) result = true
+  })
+  return result
 }
