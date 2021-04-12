@@ -25,3 +25,26 @@ class TwoSum {
     return false
   }
 }
+
+//Two pointer solution
+// Given a list of numbers nums and a number k, return whether any two elements 
+// from the list add up to k. You may not use the same element twice.
+
+Note: Numbers can be negative or 0.
+const sumOfTwoNumbers = (nums, k) => {
+
+  const sorted = nums.sort((a, b) => a - b)
+  let left = 0, right = sorted.length - 1, sum
+
+  while (left < right) {
+    sum = sorted[left] + sorted[right]
+    if (sum === k) {
+      return true
+    } else if (sum < k) {
+      left += 1
+    } else {
+      right -= 1
+    }
+  }
+  return false
+}
