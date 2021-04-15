@@ -30,7 +30,8 @@ class TwoSum {
 // Given a list of numbers nums and a number k, return whether any two elements 
 // from the list add up to k. You may not use the same element twice.
 
-Note: Numbers can be negative or 0.
+// Note: Numbers can be negative or 0.
+
 const sumOfTwoNumbers = (nums, k) => {
 
   const sorted = nums.sort((a, b) => a - b)
