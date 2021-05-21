@@ -2,7 +2,7 @@
 // modifying the list in-place. The relative ordering of other elements should stay 
 // the same.
 
-Can you do it in \mathcal{O}(1)O(1) additional space?
+// Can you do it in \mathcal{O}(1)O(1) additional space?
 
 const inPlaceMoveZeroesToEnd = nums => {
   let left = 0, right = 1
